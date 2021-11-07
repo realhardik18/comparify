@@ -2,19 +2,21 @@ import spotipy
 import spotipy.oauth2 as oauth2
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
+from site_render import show_site
 
 auth_manager = SpotifyClientCredentials(
     client_id="xxx",
     client_secret="xxx"
 )
 
-playlist_id = "playlist id goes here"
+playlist_id_1 = "x"
+playlist_id_2 = "x"
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
 
 def stats_getter(playlist):
     track_ids = []
-    playlist = sp.user_playlist("spotify", playlist_id)
+    playlist = sp.user_playlist("spotify", playlist)
     for item in playlist['tracks']['items']:
         track = item['track']
         track_ids.append(track['id'])
@@ -47,7 +49,6 @@ def stats_getter(playlist):
     return stats
 
 
-statz = stats_getter(playlist_id)
-print(statz['most_com_artist'])
-print(statz['avg_pop'])
-print(statz['avg_len'])
+statz_1 = stats_getter(playlist_id_1)
+statz_2 = stats_getter(playlist_id_2)
+show_site()
