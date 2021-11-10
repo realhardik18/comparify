@@ -74,7 +74,7 @@
   font-size: x-large;
 }
 
-.result-stat-1 {
+.result-stat {
   color: crimson;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -82,10 +82,15 @@
   font-size: x-large;
 }
 
-.result-stat-2 {
-  color: crimson;
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.try-another {
+  color: darkgoldenrod;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-align: right;
-  font-size: x-large;
+  text-align: center;
+  font-size: xx-large;
 }

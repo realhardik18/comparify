@@ -14,7 +14,22 @@
     <h1 class="result-text">Here are some stats between the two playlists given</h1>
     <h1 class="result-text">User-1 stats are on the left hand side while user-2 stats are on the right side</h1>
     <h1 class="result-stats-title">Most common artist</h1>
-    <h1>{{user_1_stat}}</h1>
-    <h1>{{user_2_stat}}</h1>
+    <div>
+        <h1 class="result-stat">{{user_1_stat['most_com_artist']}}</h1>
+        <h1 class="result-stat">{{user_2_stat['most_com_artist']}}</h1>
+    </div>
+    <br>
+    <h1 class="result-stats-title">Avg duration of each song</h1>
+    <div>
+        <h1 class="result-stat">{{user_1_stat['avg_len']}} minutes</h1>
+        <h1 class="result-stat">{{user_2_stat['avg_len']}} minutes</h1>
+    </div>
+    <h1 class="result-stats-title">Avg Popularity(higher the score, more popular the songs in the playlist)</h1>
+    <div>
+        <h1 class="result-stat">{{user_1_stat['avg_pop']}}</h1>
+        <h1 class="result-stat">{{user_2_stat['avg_pop']}}</h1>
+    </div>
+    <br>
+    <h1 class="try-another">Compare <a href="/">another playlist!</a></h1>
 </body>
 </html>
