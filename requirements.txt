@@ -1,2 +1,3 @@
 Flask==1.1.2
 Spotipy==2.19.0
+gunicorn==20.1.0
