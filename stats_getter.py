@@ -2,13 +2,11 @@ import spotipy
 import spotipy.oauth2 as oauth2
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
-from dotenv import load_dotenv, dotenv_values
 
-config = dotenv_values(".env")
 
 auth_manager = SpotifyClientCredentials(
-    client_id=config["CLIENT_ID"],
-    client_secret=config["CLIENT_SECRET"]
+    client_id='x',
+    client_secret='x'
 )
 
 sp = spotipy.Spotify(auth_manager=auth_manager)
