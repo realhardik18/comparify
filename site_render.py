@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 from threading import Thread
+
+from flask.helpers import url_for
 from stats_getter import stats_getter
 
 app = Flask('')
 
 
-@app.route('/')
+@app.route(url_for('index.html'))
 def home():
     return render_template("index.html")
 
@@ -14,7 +16,7 @@ def run():
     app.run(host='0.0.0.0')
 
 
-@app.route("/result", methods=['POST'])
+@app.route(url_for("result.html"), methods=['POST'])
 def result():
     user_1_playlist = request.form['user_1']
     user_1_playlist.split()
