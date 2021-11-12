@@ -7,7 +7,7 @@ from stats_getter import stats_getter
 app = Flask('')
 
 
-@app.route(url_for('index.html'))
+@app.route('/')
 def home():
     return render_template("index.html")
 
@@ -16,7 +16,7 @@ def run():
     app.run(host='0.0.0.0')
 
 
-@app.route(url_for("result.html"), methods=['POST'])
+@app.route('/result', methods=['POST'])
 def result():
     user_1_playlist = request.form['user_1']
     user_1_playlist.split()
