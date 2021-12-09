@@ -1,4 +1,0 @@
-Spotipy==2.19.0
-Flask==1.1.2
-gunicorn==20.1.0
-Jinja2==2.11.3
