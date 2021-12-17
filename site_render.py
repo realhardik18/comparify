@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 from threading import Thread
-
-from flask.helpers import url_for
+from flask.helpers import send_file, url_for
 from stats_getter import stats_getter
+from song_downloader import return_mp3
+from delete_file import delete
 
 app = Flask('')
 
@@ -25,6 +26,20 @@ def result():
     playlist_1 = user_1_playlist[34:]
     playlist_2 = user_2_playlist[34:]
     return render_template("result.html", user_1_stat=stats_getter(playlist_1), user_2_stat=stats_getter(playlist_2))
+
+
+@app.route("/download")
+def download():
+    return render_template("download.html")
+
+
+@app.route("/music", methods=['POST'])
+def music():
+    song_link = request.form['song']
+    song_link.split()
+    song_id = song_link[31:]
+    song_path = return_mp3(song_id)
+    return send_file(song_path, as_attachment=True)
 
 
 def show_site():
