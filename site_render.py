@@ -3,7 +3,6 @@ from threading import Thread
 from flask.helpers import send_file, url_for
 from stats_getter import stats_getter
 from song_downloader import return_mp3
-from delete_file import delete
 
 app = Flask('')
 
